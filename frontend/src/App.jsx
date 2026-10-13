@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Routes, Route } from 'react-router-dom'
+// Import your custom components
+import ProductGrid from './components/ProductGrid'
+import Navbar from './components/Navbar'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -17,10 +21,18 @@ function App() {
   }, [])
 
   return (
-    <div>
-      <h1>Digital Cards Store</h1>
-      <p>Check your browser console for the data.</p>
+    <>
+    <Navbar/>
+
+    <div className="min-h-screen bg-gray-50 p-8">
+      <h1 className="text-4xl font-extrabold text-gray-900 mb-8 text-center uppercase tracking-tight">
+        Digital Cards Store
+      </h1>
+    <Routes>
+      <Route path="/" element={<ProductGrid products={products} />} />
+    </Routes>
     </div>
+    </>
   )
 }
 
