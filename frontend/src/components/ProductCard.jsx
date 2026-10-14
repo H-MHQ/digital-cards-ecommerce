@@ -1,4 +1,4 @@
-function ProductCard({ product }) {
+function ProductCard({ product , addToCart }) {
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
       
@@ -14,7 +14,7 @@ function ProductCard({ product }) {
         
         <div className="flex items-center justify-between mt-auto">
           <span className="text-xl font-black text-gray-900">${product.price}</span>
-          <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-gray-800 transition-colors">
+          <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-gray-800 transition-colors" onClick={() => addToCart(product)}>
             Add to Cart
           </button>
         </div>
